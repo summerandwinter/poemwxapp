@@ -1,0 +1,54 @@
+/**card.wxss**/
+
+.content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #eee;
+  white-space: nowrap;
+}
+
+.item {
+  background-color: #efefef;
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.item-photo {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  height: 80%;
+  width: 80%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.toolbar {
+  position: fixed;
+  display: flex;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60rpx;
+}
+
+.iconfont {
+  font-size: 36rpx;
+}
+
+.like-nummber {
+  font-size: 28rpx;
+  margin-left: 8rpx;
+}
+
+.toolbar-item {
+  width: 375rpx;
+  text-align: center;
+  color: #8a8a8a;
+}
