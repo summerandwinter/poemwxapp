@@ -13,7 +13,14 @@
   </view>
   <view style="width: 100%" class="content" hidden="{{content.hidden}}" >
     <view class="item"  bindtap="tap" data-id="{{card.id}}">
-      <image class="item-photo" src="{{preview}}" mode="aspectFit"></image>   
+      <scroll-view scroll-y="true" class="poem">
+       
+      <text class="title">{{poem.title}}</text>
+      <text class="author">{{poem.author}}</text>
+      <text class="text">{{poem.content}}</text>
+     
+      
+      </scroll-view>
     </view>
     <view class="toolbar">
         <view class="toolbar-item like-container" bindtap="like">

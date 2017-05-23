@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/recommend/recommend",
-    "pages/book/book",
-    "pages/mine/mine"
+    "pages/poem/poem",
+    "pages/recommend/recommend",  
+    "pages/mine/mine",
+    "pages/detail/detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -20,16 +21,16 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/explore/explore",
+        "pagePath": "pages/recommend/recommend",
         "iconPath": "image/icon_eye.png",
         "selectedIconPath": "image/icon_eye_hl.png",
         "text": "发现"
       },
       {
-        "pagePath": "pages/book/book",
+        "pagePath": "pages/poem/poem",
         "iconPath": "image/icon_card.png",
         "selectedIconPath": "image/icon_card_hl.png",
-        "text": "词卡"
+        "text": "诗词"
       },     
       {
         "pagePath": "pages/mine/mine",

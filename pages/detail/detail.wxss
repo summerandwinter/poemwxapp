@@ -1,6 +1,7 @@
 /**detail.wxss**/
 
 .content {
+  font-family: PingFangSC-Thin,-apple-system-font, Helvetica Neue, Helvetica, sans-serif;
   position: fixed;
   left: 0;
   top: 0;
@@ -18,8 +19,9 @@
   position: relative;
 }
 
-.item-photo {
+.poem {
   position: absolute;
+  background-color: #fff;
   left: 10%;
   top: 10%;
   height: 80%;

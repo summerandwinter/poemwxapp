@@ -2,7 +2,7 @@
 //获取应用实例
 var util = require('../../utils/util.js');
 const AV = require('../../utils/av-weapp-min.js');
-const Card = require('../../model/card');
+const Poem = require('../../model/poem');
 var app = getApp()
 Page({
   data: {
@@ -29,7 +29,7 @@ Page({
     var that = this;
     var likes = that.data.like.number;
     var paramsJson = {
-      cid: that.data.card.id,
+      cid: that.data.poem.id,
       uid: app.globalData.user.objectId
     };
     console.log(paramsJson);
@@ -77,7 +77,7 @@ Page({
         } else if (res.tapIndex == 1) {
           //复制文字
           wx.setClipboardData({
-            data: that.data.card.content,
+            data: that.data.poem.content,
             success: function (res) {
               wx.showToast({
                 title: '复制成功',
@@ -97,10 +97,10 @@ Page({
   },
   initData: function (id) {
     var that = this;
-    var card = AV.Object.createWithoutData('Card', id);
+    var poem = AV.Object.createWithoutData('Poem', id);
     var user = AV.Object.createWithoutData('_User', app.globalData.user.objectId);
     var queryCount = new AV.Query('Like');
-    queryCount.equalTo('card', card);
+    queryCount.equalTo('poem', poem);
     queryCount.equalTo('user', user);
     queryCount.count().then(function (count) {
       console.log(count);
@@ -111,18 +111,14 @@ Page({
       }
 
     });
-    var query = new AV.Query('Card');
-    query.include('photo');
-    query.get(id).then(function (card) {
-      console.log(card)
-      console.log(card.photo.attributes.url);
-      //var preview = 'https://timesand.leanapp.cn/card/preview/' + card.id + '.png';
-      var preview = card.photo.attributes.url;
+    var query = new AV.Query('Poem');
+    //query.include('photo');
+    query.get(id).then(function (poem) {
+      console.log(poem)
       // 成功获得实例
       that.setData({
-        card,
-        preview: preview,
-        'like.number': card.likes,
+        poem,
+        'like.number': poem.likes,
         'loading.hidden': true,
         'content.hidden': false
       })
