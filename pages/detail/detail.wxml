@@ -11,26 +11,20 @@
       </view>
     </view>
   </view>
-  <view style="width: 100%" class="content" hidden="{{content.hidden}}" >
-    <view class="item"  bindtap="tap" data-id="{{card.id}}">
+  <view style="width: 100%" class="content" hidden="{{content.hidden}}">
+    <view class="item" bindtap="tap" data-id="{{card.id}}">
       <scroll-view scroll-y="true" class="poem">
-       
-      <text class="title">{{poem.title}}</text>
-      <text class="author">{{poem.author}}</text>
-      <text class="text">{{poem.content}}</text>
-     
-      
+        <view class="title">
+          <text>{{poem.title}}</text>
+        </view>
+        <view class="author">
+          <text>{{poem.author}}</text>
+        </view>
+        <view class="text">
+          <text>{{poem.content}}</text>
+        </view>
       </scroll-view>
     </view>
-    <view class="toolbar">
-        <view class="toolbar-item like-container" bindtap="like">
-          <text class="iconfont {{like.class}}"><text class="like-nummber">{{like.number}}</text></text>
-          
-        </view>
-        <view class="toolbar-item share-container" bindtap="options">
-          <text class="iconfont icon-share"></text>
-        </view>
-      </view>
   </view>
   <view class="slogan" hidden="{{slogan.hidden}}">{{slogan.word}}</view>
 </view>

@@ -3,6 +3,7 @@ const AV = require('./utils/av-weapp-min.js');
 const Movie = require('./model/movie');
 App({
   onLaunch: function () {
+    console.log('app launch')
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -13,6 +14,7 @@ App({
     });
     var that = this;
     AV.User.loginWithWeapp().then(user => {
+      console.log(user)
       that.globalData.user = user.toJSON();
       console.log(that.globalData.user);
       // 获得当前登录用户

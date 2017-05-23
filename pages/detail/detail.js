@@ -97,20 +97,7 @@ Page({
   },
   initData: function (id) {
     var that = this;
-    var poem = AV.Object.createWithoutData('Poem', id);
-    var user = AV.Object.createWithoutData('_User', app.globalData.user.objectId);
-    var queryCount = new AV.Query('Like');
-    queryCount.equalTo('poem', poem);
-    queryCount.equalTo('user', user);
-    queryCount.count().then(function (count) {
-      console.log(count);
-      if (count > 0) {
-        that.setData({ 'like.class': 'icon-liked' });
-      } else {
-        that.setData({ 'like.class': 'icon-like' });
-      }
-
-    });
+    that.setData({ 'like.class': 'icon-liked' });
     var query = new AV.Query('Poem');
     //query.include('photo');
     query.get(id).then(function (poem) {
