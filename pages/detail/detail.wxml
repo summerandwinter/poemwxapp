@@ -8,12 +8,15 @@
         <view class="sk-rect sk-rect4"></view>
         <view class="sk-rect sk-rect5"></view>
       </view>
-    </view>
+    </view>s
   </view>
-  <scroll-view scroll-y="true" class="content" hidden="{{content.hidden}}">
+  <scroll-view scroll-x="true" class="content" hidden="{{content.hidden}}">
     <view class="item" bindtap="tap" data-id="{{poem.id}}">
-      <text class="title" wx:if="{{poem.title.length >0 }}">{{poem.title}}</text>
-      <text class="author" wx:if="{{poem.author.length >0 }}">{{poem.author}}</text>
+      <view class="meta">
+        <text class="title" wx:if="{{poem.title.length >0 }}">{{poem.title}}</text>
+        <text class="dot" wx:if="{{poem.title.length >0 && poem.author.length >0}}">·</text>
+        <text class="author" wx:if="{{poem.author.length >0 }}">{{poem.author}}</text>
+      </view>
       <text class="item-word">{{poem.content}}</text>
     </view>
 

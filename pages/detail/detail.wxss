@@ -1,74 +1,56 @@
-.nav {
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100rpx;
-  background: #fff;
-}
-
-.nav-item {
-  width: 120rpx;
-  position: relative;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  background-color: #fff;
-  font-size: 36rpx;
-}
-
-.tab {
-  color: #888;
-  height: 100rpx;
-  line-height: 100rpx;
-}
-
-.tab.selected {
-  color: #000;
-}
-
-.tab.selected::after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 6rpx;
-  background-color: #000;
-}
-.content.withNav{
-  top: 100rpx;
-}
 .content {
   font-family: PingFangSC-Thin,-apple-system-font, Helvetica Neue, Helvetica, sans-serif;
   position: absolute;
   left: 0;
   height: 100%;
-  background: #eee;
+  background: #fff;
 }
 
 .item {
-  min-height: 500rpx;
+  height:100%;
   width: 100%;
   display:table; 
   color: #353535;
   position: relative;
   background-color: #ffffff; 
+  writing-mode: vertical-lr;
 }
 
 
-.item-word {
-  vertical-align:middle;    
-  display:table-cell;  
-  font-size: 14pt;
-  line-height: 25pt;
-  padding: 100rpx 40rpx;
+.item-word {  
+  display:block;  
+  font-size: 12px;
+  line-height: 25px;
+  padding: 40rpx 40rpx;
+  position: relative;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+
+}
+.meta {
+  display:block;
+  padding: 40rpx 40rpx;
   position: relative;
   text-align: left;
   align-items: center;
   justify-content: center;
 }
-
+.title {
+  font-size: 80rpx;
+  position: relative;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+.dot{
+  font-size: 80rpx;
+  line-height: 25pt;
+}
+.author {
+  font-size: 80rpx;
+  position: relative;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
