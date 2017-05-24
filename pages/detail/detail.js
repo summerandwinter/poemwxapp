@@ -97,6 +97,22 @@ Page({
   },
   initData: function (id) {
     var that = this;
+    var content = "苦斋者，章溢先生隐居之室也。\n室十有（yòu）二楹（yíng），覆之以茆（máo），在匡山之巅。匡山在处（chù）之龙泉县西南二百里，剑溪之水出焉。山四面峭壁拔起，岩崿（è）皆苍石，岸外而臼（jiù）中。其下惟白云，其上多北风。风从北来者，大率（shuài）不能甘而善苦，故植物中（zhòng）之，其味皆苦，而物性之苦者亦乐生焉。 ";
+    var title = "苦斋记";
+    var author = "刘基";
+    var poem = {title:title,author:author,content:content}
+    that.setData({ 'like.class': 'icon-liked' });
+    that.setData({
+      poem,
+      'like.number': poem.likes,
+      'loading.hidden': true,
+      'content.hidden': false
+    })
+    
+
+  },
+  initData2: function (id) {
+    var that = this;
     that.setData({ 'like.class': 'icon-liked' });
     var query = new AV.Query('Poem');
     //query.include('photo');
