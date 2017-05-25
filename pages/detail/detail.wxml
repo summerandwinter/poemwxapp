@@ -8,7 +8,7 @@
         <view class="sk-rect sk-rect4"></view>
         <view class="sk-rect sk-rect5"></view>
       </view>
-    </view>s
+    </view>
   </view>
   <scroll-view scroll-x="true" class="content" hidden="{{content.hidden}}">
     <view class="item" bindtap="tap" data-id="{{poem.id}}">
@@ -18,6 +18,7 @@
         <text class="author" wx:if="{{poem.author.length >0 }}">{{poem.author}}</text>
       </view>
       <text class="item-word">{{poem.content}}</text>
+
     </view>
 
   </scroll-view>

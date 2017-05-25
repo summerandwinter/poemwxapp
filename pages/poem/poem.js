@@ -55,6 +55,11 @@ Page({
         query.skip(skip);
         query.find().then(function (results) {
           console.log(results);
+          for (var item in results) {
+            if (!results[item].digest) {
+              results[item].digest = results[item].content.substring(0, 100)
+            }
+          }
           that.setData({
             'isLoading': false,
             'info.list': that.data.info.list.concat(results),
@@ -63,6 +68,7 @@ Page({
           if (that.data.info.total < that.data.info.page * limit) {
             that.setData({ 'info.hasMore': false });
           }
+          
         }, function (error) {
           that.setData({ 'isLoading': false })
           console.log('get Poem list failed!' + error);
@@ -106,6 +112,11 @@ Page({
         query.limit(limit);// 最多返回 10 条结果
         query.skip(skip);// 跳过 20 条结果
         query.find().then(function (results) {
+          for (var item in results) {
+            if (!results[item].digest) {
+              results[item].digest = results[item].content.substring(0, 100)
+            }
+          }
           that.setData({
             'loading.hidden': true,
             'info.list': that.data.info.list.concat(results),

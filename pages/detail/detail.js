@@ -125,6 +125,9 @@ Page({
         'loading.hidden': true,
         'content.hidden': false
       })
+      wx.setNavigationBarTitle({
+        title: poem.title
+      });
       console.log(that.data);
 
     }, function (error) {
